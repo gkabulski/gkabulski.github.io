@@ -14,53 +14,24 @@ QUALITY = {'sm': 72, 'md': 76, 'lg': 82}
 
 # id, category, title (single primary category; extra tags optional)
 PHOTOS = [
-  ('GMR08021', 'cycling', 'London Dynamo, full gas'),
-  ('GMR08428', 'cycling', 'Into the bend'),
-  ('GMR03875', 'cycling', 'Crit peloton, Lee Valley'),
-  ('GMR07753', 'cycling', 'Cyclocross after dark'),
-  ('GMR07717', 'cycling', 'Taped course'),
-  ('GMR08175', 'cycling', 'Victory salute'),
-  ('GMR07248', 'cycling', 'Morning chaingang'),
-  ('GMR06617', 'cycling', 'Regent’s Park laps'),
-  ('GMR09318', 'cycling', 'Against the clock'),
-  ('GMR08320', 'cycling', 'Wheel to wheel'),
-  ('GMR03474', 'cycling', 'On the start line'),
-  ('GMR06475', 'cycling', 'Golden hour group'),
-  ('GMR05962', 'cycling', 'The pack'),
-  ('GMR05863', 'cycling', 'Social ride, Saturday'),
-  ('GMR05846', 'cycling', 'Side by side'),
-  ('GMR06085', 'cycling', 'Gates of the park'),
-  ('GMR05590-2', 'cycling', 'Climbing out of the saddle'),
-  ('GMR08526', 'cycling', 'Teal machine'),
-  ('GMR08617', 'cycling', 'City sprint'),
-  ('GMR02042', 'cycling', 'Panned past'),
-  ('GMR00215', 'cycling', 'Speed blur'),
-  ('GMR00194', 'cycling', 'Tail light'),
-  ('GMR00343', 'cycling', 'Autumn ride'),
-  ('GMR00151', 'cycling', 'Night ride'),
-  ('GMR00206', 'cycling', 'Bikepacker'),
-  ('GMR09934', 'cycling', 'Inline skate pack', ['action']),
-  ('GMR08507', 'street', 'Two riders, low sun'),
-  ('GMR01483', 'street', 'Shoreline walk'),
-  ('GMR03149', 'street', 'Morning class'),
-  ('GMR03272', 'concerts', 'Two guitars, blue light'),
-  ('GMR08673', 'concerts', 'Blue stage'),
-  ('GMR00848-2', 'concerts', 'Candlelit quartet'),
-  ('GMR01992', 'urban', 'City at blue hour'),
-  ('GMR08840', 'urban', 'London skyline'),
-  ('GMR07228-2', 'urban', 'Departures at sunset'),
-  ('GMR04579', 'landscape', 'Douro evening, Porto'),
-  ('GMR02684', 'landscape', 'Atlas mountain village'),
-  ('GMR03692-2', 'landscape', 'Falls'),
-  ('GMR01315', 'landscape', 'Snowline'),
-  ('GMR04447', 'portrait', 'Portrait in black'),
-  ('GMR06363', 'portrait', 'Orange dress'),
-  ('GMR04942', 'portrait', 'Confetti'),
-  ('GMR01341', 'portrait', 'Snow day'),
-  ('GMR01768-2', 'wildlife', 'Longhorn'),
-  ('GMR04705', 'wildlife', 'Peacock display'),
-  ('GMR07124-2', 'wildlife', 'Swan on the green'),
-  ('GMR05573', 'wildlife', 'Approach'),
+  ('GMR08021', 'racing', 'London Dynamo, full gas'),
+  ('GMR08428', 'racing', 'Into the bend'),
+  ('GMR03875', 'racing', 'Crit peloton, Lee Valley'),
+  ('GMR07753', 'racing', 'Cyclocross after dark'),
+  ('GMR07717', 'racing', 'Taped course'),
+  ('GMR08175', 'racing', 'Victory salute'),
+  ('GMR09318', 'racing', 'Against the clock'),
+  ('GMR03474', 'racing', 'On the start line'),
+  ('GMR05590-2', 'racing', 'Climbing out of the saddle'),
+  ('GMR08617', 'racing', 'City sprint'),
+  ('GMR07248', 'rides', 'Morning chaingang'),
+  ('GMR06475', 'rides', 'Golden hour group'),
+  ('GMR08507', 'rides', 'Two riders, low sun'),
+  ('GMR08526', 'rides', 'Teal machine'),
+  ('GMR00215', 'shoots', 'Speed blur'),
+  ('GMR00151', 'shoots', 'Night ride'),
+  ('GMR02042', 'shoots', 'Panned past'),
+  ('GMR00206', 'shoots', 'Bikepacker'),
 ]
 ABOUT = 'GMR08078-2'
 
@@ -94,6 +65,13 @@ def render(src_id, out_dir_prefix=''):
     return w, h, '#%02x%02x%02x' % c
 
 data = []
+# remove outputs of photos no longer in the list
+keep = {p[0] for p in PHOTOS}
+for key in SIZES:
+    d = os.path.join(OUT, key)
+    for f in os.listdir(d) if os.path.isdir(d) else []:
+        if f[:-5] not in keep:
+            os.remove(os.path.join(d, f))
 for p in PHOTOS:
     pid, cat, title = p[:3]
     w, h, color = render(pid)
@@ -104,10 +82,8 @@ for p in PHOTOS:
     print(pid, cat, w, h)
 w, h, _ = render(ABOUT, 'about-')
 out = {'categories': [
-         {'id': 'cycling', 'label': 'Cycling & Action'}, {'id': 'street', 'label': 'Street'},
-         {'id': 'urban', 'label': 'Urban'}, {'id': 'landscape', 'label': 'Landscape'},
-         {'id': 'portrait', 'label': 'Portrait'}, {'id': 'wildlife', 'label': 'Wildlife'},
-         {'id': 'concerts', 'label': 'Concerts'}],
+         {'id': 'racing', 'label': 'Racing'}, {'id': 'rides', 'label': 'Club rides'},
+         {'id': 'shoots', 'label': 'Rider shoots'}],
        'about': {'id': ABOUT, 'w': w, 'h': h, 'sm': f'photos/about-sm/{ABOUT}.webp',
                  'md': f'photos/about-md/{ABOUT}.webp', 'lg': f'photos/about-lg/{ABOUT}.webp'},
        'photos': data}

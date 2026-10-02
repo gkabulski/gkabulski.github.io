@@ -1,6 +1,6 @@
 # gkabulski.github.io
 
-Portfolio of **Greg Kabulski** — London cycling & action photographer.
+Portfolio of **Greg Kabulski** — London cycling photographer.
 Live at https://gkabulski.github.io · Instagram [@temporalny](https://www.instagram.com/temporalny/)
 
 Plain static site (no framework, no build step) served by GitHub Pages from `main`.
