@@ -1,6 +1,6 @@
 (function () {
   'use strict';
-  var BASE = '../../';
+  var BASE = '';
   var D = window.PORTFOLIO;
   var $ = function (id) { return document.getElementById(id); };
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

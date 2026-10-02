@@ -23,6 +23,10 @@
   {
    "id": "wildlife",
    "label": "Wildlife"
+  },
+  {
+   "id": "concerts",
+   "label": "Concerts"
   }
  ],
  "about": {
@@ -357,18 +361,18 @@
    "lg": "photos/lg/GMR00343.webp"
   },
   {
-   "id": "GMR00147",
+   "id": "GMR00151",
    "category": "cycling",
    "tags": [],
    "title": "Night ride",
-   "w": 2250,
+   "w": 1688,
    "h": 3000,
-   "color": "#050303",
-   "exif": "26mm · f/3.5 · 1/160s · ISO 100",
+   "color": "#251c19",
+   "exif": "26mm · f/3.5 · 1/125s · ISO 100",
    "year": "2026",
-   "sm": "photos/sm/GMR00147.webp",
-   "md": "photos/md/GMR00147.webp",
-   "lg": "photos/lg/GMR00147.webp"
+   "sm": "photos/sm/GMR00151.webp",
+   "md": "photos/md/GMR00151.webp",
+   "lg": "photos/lg/GMR00151.webp"
   },
   {
    "id": "GMR00206",
@@ -429,34 +433,6 @@
    "lg": "photos/lg/GMR01483.webp"
   },
   {
-   "id": "GMR00848-2",
-   "category": "street",
-   "tags": [],
-   "title": "Candlelit quartet",
-   "w": 4000,
-   "h": 2667,
-   "color": "#33140b",
-   "exif": "66mm · f/2.5 · 1/60s · ISO 1600",
-   "year": "2024",
-   "sm": "photos/sm/GMR00848-2.webp",
-   "md": "photos/md/GMR00848-2.webp",
-   "lg": "photos/lg/GMR00848-2.webp"
-  },
-  {
-   "id": "GMR08673",
-   "category": "street",
-   "tags": [],
-   "title": "Blue stage",
-   "w": 2250,
-   "h": 3000,
-   "color": "#112465",
-   "exif": "150mm · f/4.5 · 1/200s · ISO 1000",
-   "year": "2026",
-   "sm": "photos/sm/GMR08673.webp",
-   "md": "photos/md/GMR08673.webp",
-   "lg": "photos/lg/GMR08673.webp"
-  },
-  {
    "id": "GMR03149",
    "category": "street",
    "tags": [],
@@ -469,6 +445,48 @@
    "sm": "photos/sm/GMR03149.webp",
    "md": "photos/md/GMR03149.webp",
    "lg": "photos/lg/GMR03149.webp"
+  },
+  {
+   "id": "GMR03272",
+   "category": "concerts",
+   "tags": [],
+   "title": "Two guitars, blue light",
+   "w": 4000,
+   "h": 2667,
+   "color": "#0f315e",
+   "exif": "43mm · f/2.2 · 1/250s · ISO 5000",
+   "year": "2026",
+   "sm": "photos/sm/GMR03272.webp",
+   "md": "photos/md/GMR03272.webp",
+   "lg": "photos/lg/GMR03272.webp"
+  },
+  {
+   "id": "GMR08673",
+   "category": "concerts",
+   "tags": [],
+   "title": "Blue stage",
+   "w": 2250,
+   "h": 3000,
+   "color": "#112465",
+   "exif": "150mm · f/4.5 · 1/200s · ISO 1000",
+   "year": "2026",
+   "sm": "photos/sm/GMR08673.webp",
+   "md": "photos/md/GMR08673.webp",
+   "lg": "photos/lg/GMR08673.webp"
+  },
+  {
+   "id": "GMR00848-2",
+   "category": "concerts",
+   "tags": [],
+   "title": "Candlelit quartet",
+   "w": 4000,
+   "h": 2667,
+   "color": "#33140b",
+   "exif": "66mm · f/2.5 · 1/60s · ISO 1600",
+   "year": "2024",
+   "sm": "photos/sm/GMR00848-2.webp",
+   "md": "photos/md/GMR00848-2.webp",
+   "lg": "photos/lg/GMR00848-2.webp"
   },
   {
    "id": "GMR01992",
