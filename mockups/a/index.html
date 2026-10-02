@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Greg Kabulski — Cycling & Action Photographer, London</title>
+<meta name="description" content="London cycling and action photography by Greg Kabulski. Shot from inside the peloton.">
+<meta property="og:title" content="Greg Kabulski — Cycling & Action Photographer, London">
+<meta property="og:description" content="London cycling and action photography by Greg Kabulski. Shot from inside the peloton.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="../../photos/md/GMR08021.webp">
+<meta name="theme-color" content="#0c0c0c">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230c0c0c'/%3E%3Cpath d='M6 24 16 6l10 18z' fill='%23f5d000'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="home">
+<a class="skip" href="#work">Skip to work</a>
+<header class="nav" id="nav">
+  <a class="wordmark" href="index.html" aria-label="Greg Kabulski, home">GK<span>/</span>PELOTON</a>
+  <nav aria-label="Main">
+    <a href="index.html#work" class="on">Work</a>
+    <a href="about.html">About</a>
+    <a href="https://www.instagram.com/temporalny/" target="_blank" rel="noopener">Instagram</a>
+  </nav>
+</header>
+<main>
+<section class="hero" aria-label="Introduction">
+  <img class="hero-img" src="../../photos/md/GMR08021.webp"
+       srcset="../../photos/md/GMR08021.webp 960w, ../../photos/lg/GMR08021.webp 1800w"
+       sizes="100vw" width="2250" height="3000" alt="Riders of London Dynamo at full speed" fetchpriority="high" decoding="async">
+  <div class="hero-shade"></div>
+  <div class="hero-copy">
+    <p class="eyebrow">Cycling &amp; action photography &mdash; London</p>
+    <h1>Greg<br>Kabulski</h1>
+    <a class="cue" href="#work" aria-label="Scroll to work"><span>Scroll</span><i></i></a>
+  </div>
+</section>
+
+<section class="work" id="work" aria-labelledby="work-h">
+  <div class="work-head reveal">
+    <h2 id="work-h">The Work</h2>
+    <p class="count" id="count" aria-live="polite"></p>
+  </div>
+  <div class="tabs" id="tabs" role="tablist" aria-label="Filter by category"></div>
+  <div class="grid" id="grid"></div>
+  <noscript><p class="ns">This portfolio needs JavaScript to display the photo grid. Find the pictures on <a href="https://www.instagram.com/temporalny/">Instagram @temporalny</a>.</p></noscript>
+</section>
+</main>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+  <div class="lb-top"><span class="lb-count" id="lbCount"></span><button class="lb-x" id="lbClose" aria-label="Close">Close &times;</button></div>
+  <button class="lb-nav prev" id="lbPrev" aria-label="Previous photo">&#8592;</button>
+  <figure class="lb-fig"><img id="lbImg" alt=""><figcaption><b id="lbTitle"></b><span id="lbMeta"></span></figcaption></figure>
+  <button class="lb-nav next" id="lbNext" aria-label="Next photo">&#8594;</button>
+</div>
+<footer class="foot" id="contact">
+  <div class="foot-cta reveal">
+    <p class="eyebrow">Commissions &amp; club rides</p>
+    <a class="foot-mail" href="mailto:gkabulski@gmail.com">gkabulski@gmail.com</a>
+  </div>
+  <div class="foot-row">
+    <span>&copy; 2026 Greg Kabulski</span>
+    <span><a href="https://www.instagram.com/temporalny/" target="_blank" rel="noopener">Instagram @temporalny</a> &middot; <a href="mailto:gkabulski@gmail.com">Email</a></span>
+  </div>
+</footer>
+<script src="../../photos/photos.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
