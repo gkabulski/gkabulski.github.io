@@ -12,7 +12,7 @@ a{color:inherit}
 
 /* nav */
 .nav{position:fixed;inset:0 0 auto 0;z-index:50;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 var(--g);transition:background .3s,border-color .3s;border-bottom:1px solid transparent;background:linear-gradient(#0c0c0cb0,transparent)}
-.nav.solid,body.about .nav{background:#0c0c0cf2;border-color:var(--line);backdrop-filter:blur(8px)}
+.nav.solid,body.about .nav,body.community .nav{background:#0c0c0cf2;border-color:var(--line);backdrop-filter:blur(8px)}
 .wordmark{font:800 22px/1 var(--disp);letter-spacing:.06em;text-decoration:none;text-transform:uppercase}
 .wordmark span{color:var(--y);margin:0 2px}
 .nav nav{display:flex;gap:clamp(14px,3vw,34px)}
@@ -96,6 +96,28 @@ body.locked{overflow:hidden}
  .strengths li{padding-right:10px}
 }
 
+/* community */
+.feed{padding:calc(56px + 56px) var(--g) 96px;max-width:1800px;margin:0 auto}
+.feed-head{max-width:760px;margin-bottom:48px}
+.feed h1{font:800 clamp(52px,9vw,112px)/.88 var(--disp);text-transform:uppercase;margin:14px 0 24px}
+.feed .lead{font-size:19px;color:#cfcdc8;max-width:56ch}
+.posts{display:grid;grid-template-columns:minmax(0,1fr);gap:40px 24px;align-items:start}
+@media(min-width:760px){.posts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1200px){.posts{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.post{max-width:540px;width:100%;margin:0 auto;border-top:3px solid var(--y);padding-top:18px}
+.post-tag{font:600 12px var(--disp);letter-spacing:.2em;text-transform:uppercase;color:var(--y)}
+.post h2{font-size:clamp(26px,3vw,34px);margin:6px 0 10px}
+.post-head p:not([class]){color:#cfcdc8;font-size:15px}
+.post-meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;margin:12px 0 16px;font:600 14px var(--disp);letter-spacing:.12em;text-transform:uppercase}
+.post-meta a{text-decoration:none;color:var(--mute);transition:color .2s}
+.post-meta a:hover{color:var(--y)}
+.post-meta .post-slide{color:var(--fg)}
+.post-meta .post-slide::after{content:' \2197';color:var(--y)}
+/* Instagram injects inline sizes; let the embed fill the card on small screens */
+.post .instagram-media{margin:0!important;min-width:0!important;width:100%!important;max-width:none!important;border-radius:0!important}
+.post blockquote.instagram-media{display:flex;align-items:center;justify-content:center;min-height:420px;background:var(--bg2);border:1px solid var(--line)}
+.post blockquote.instagram-media a{color:var(--mute);font:600 14px var(--disp);letter-spacing:.16em;text-transform:uppercase}
+
 /* footer */
 .foot{border-top:1px solid var(--line);padding:64px var(--g) 28px;max-width:1800px;margin:0 auto}
 .foot-mail{display:inline-block;margin-top:10px;font:800 clamp(30px,7vw,88px)/1 var(--disp);text-transform:uppercase;text-decoration:none;word-break:break-all;border-bottom:3px solid var(--y)}
@@ -113,4 +135,4 @@ body.locked{overflow:hidden}
  .reveal{opacity:1;transform:none}
  .hero-img{transform:none}
 }
-@media(max-width:480px){.wordmark{font-size:18px}.nav nav{gap:12px}.nav nav a{font-size:13px;letter-spacing:.1em}}
+@media(max-width:480px){.wordmark{font-size:17px}.nav nav{gap:12px}.nav nav a{font-size:13px;letter-spacing:.08em}.nav nav a[href*=instagram]{display:none}}

@@ -8,6 +8,7 @@ Plain static site (no framework, no build step) served by GitHub Pages from `mai
 ```
 index.html          home: hero, category filter, photo grid, lightbox
 about.html          about + contact
+community.html      Instagram posts by clubs/riders featuring my photos
 css/style.css
 js/app.js           renders the grid from photos/photos.js, filter (#hash), lightbox
 photos/
@@ -25,6 +26,11 @@ tools/build_photos.py
    Categories are defined at the bottom of the same file.
 3. Run `python3 tools/build_photos.py ~/Documents/portfolio_web` (needs Pillow + exiftool).
 4. Delete outputs of removed photos from `photos/sm|md|lg`, commit and push.
+
+## Adding a community post
+
+In `community.html`, copy an `<article class="post">` block and change the post ID, handle, text and slide number.
+Instagram's `embed.js` always opens carousels on the first slide, so the "My shot: slide N" link (which keeps `?img_index=N`) points people to the right photo.
 
 Preview locally: `python3 -m http.server` then open http://localhost:8000.
 
