@@ -14,9 +14,11 @@ js/app.js           renders the grid from photos/photos.js, filter (#hash), ligh
 photos/
   sm/ md/ lg/       480w / 960w / 2400px-long-edge WebP, metadata stripped
   about-*/          about-page portrait in the same sizes
+  community/        square tiles for community.html
   og.jpg            1200x630 social share image
   photos.json/.js   generated photo list: category, title, size, colour, camera settings
 tools/build_photos.py
+tools/fetch_instagram.py
 ```
 
 ## Adding or changing photos
@@ -29,8 +31,9 @@ tools/build_photos.py
 
 ## Adding a community post
 
-In `community.html`, copy an `<article class="post">` block and change the post ID, handle, text and slide number.
-Instagram's `embed.js` always opens carousels on the first slide, so the "My shot: slide N" link (which keeps `?img_index=N`) points people to the right photo.
+1. `python3 tools/fetch_instagram.py "https://www.instagram.com/p/<code>/?img_index=N"`
+   saves slide N as square WebP tiles in `photos/community/` (needs Pillow).
+2. In `community.html`, copy an `<a class="ig">` block and change the shortcode, slide, title, tag and handle.
 
 Preview locally: `python3 -m http.server` then open http://localhost:8000.
 
